@@ -1,45 +1,100 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# Stan Coding Challenge
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+> Welcome to the Bolomeet Coding Challenge!
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+## Overview
 
----
+To complete this challenge, you will need to write a simple [React](https://facebook.github.io/react/) based web app, and provide us the source files to be built.
 
-## Edit a file
+The purpose of this challenge is to assess your **skills and approach to composing a simple web app** given a set of screens and an API feed. We will also assess the **generated HTML, CSS, and JS** output.
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+This challenge is expected to take about 2-4 hours.
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+## The Challenge
 
----
+It's pretty simple. Using the provided screens as a reference, you'll need to build a set of React components to render the app. You'll also need to request a JSON feed, filter that data, and use the relevant fields.
 
-## Create a file
+Although this is a basic exercise, we'll be looking for **simple, well-designed, performant, and tested code** in the submission.
 
-Next, you’ll add a new file to this repository.
+Please include a `README` with setup instructions, and any tests or other documentation you created as part of your solution.
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+Please make sure you add test cases and maintain a code coverage of 95%
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+Also, add the following info to your `README`:
 
----
+- How did you decide on the technical and architectural choices used as part of your solution?
+- Are there any improvements you could make to your submission?
+- What would you do differently if you were allocated more time?
 
-## Clone a repository
+## Details
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+You will need to build the following 3 pages with React:
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+- A "Home" page
+- A "Series" page
+- A "Movies" page
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+The deployable solution should be built in a folder named **`dist`** with an entry point file of **`index.html`**.
+
+Please create components for each part of the page (eg. header, content, footer, etc).
+Assets are provided in the `assets` folder.
+
+The pages should also be usable on mobile and tablet devices.
+
+You can assume that you do not have to support legacy browsers without features such as `fetch` or `flexbox`.
+
+### "Home" Page
+
+Refer to the [screens/1-home.jpg](./screens/1-home.jpg) screen.
+
+This will be your `index.html` screen.
+
+You will need to display 2 tiles, which link to the "Series" page and the "Movies" page.
+
+### "Series" and "Movies" Pages
+
+Refer to the [screens/2-series.jpg](./screens/2-series.jpg) and [screens/3-movies.jpg](./screens/3-movies.jpg) screens.
+
+For each page you will need to fetch this JSON feed [feed/sample.json](https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json), then:
+
+- Display the first 21 `entries`
+- Where the entry has a `releaseYear` attribute value >= `2010`
+- Sorted by the `title` attribute value in ascending alphanumeric order
+
+For the "Series" page filter on:
+
+- Where the entry has a `programType` attribute value of `series`
+
+For the "Movies" page filter on:
+
+- Where the entry has a `programType` attribute value of `movie`
+
+The attributes you should use to display the entries are:
+
+- `title`
+- `images` → `Poster Art` → `url`
+
+You will also need to handle the loading and error states of fetching the JSON feed:
+
+- "Loading" state [screens/1.1-loading.jpg](./screens/1.1-loading.jpg)
+- "Error" state [screens/1.2-error.jpg](./screens/1.2-error.jpg)
+
+## FAQ
+
+### What language, framework, build tool... should I use?
+
+You may use whatever you like as long as the solution is built using [React](https://facebook.github.io/react/) or an equivalent library.
+
+We prefer it if you did not use any third party CSS frameworks.
+
+We also prefer the use of minimal dependencies.
+
+## Useful Links
+
+- [Bitbucket](https://bitbucket.org/) - Source code hosting, with free private repositories for small teams.
+- [Google Fonts - Raleway](https://fonts.google.com/?selection.family=Raleway)
+- [React](https://facebook.github.io/react/)
+
+## Other Notes
+
+Any feedback on the coding challenge once you're done is also appreciated!
