@@ -1,4 +1,4 @@
-# Stan Coding Challenge
+# Bolomeet Coding Challenge
 
 > Welcome to the Bolomeet Coding Challenge!
 
@@ -55,7 +55,7 @@ You will need to display 2 tiles, which link to the "Series" page and the "Movie
 
 Refer to the [screens/2-series.jpg](./screens/2-series.jpg) and [screens/3-movies.jpg](./screens/3-movies.jpg) screens.
 
-For each page you will need to fetch this JSON feed [feed/sample.json](https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json), then:
+For each page you will need to fetch this JSON feed [feed/sample.json](./feed/sample.json), then:
 
 - Display the first 21 `entries`
 - Where the entry has a `releaseYear` attribute value >= `2010`
@@ -85,7 +85,7 @@ You will also need to handle the loading and error states of fetching the JSON f
 
 You may use whatever you like as long as the solution is built using [React](https://facebook.github.io/react/) or an equivalent library.
 
-We prefer it if you did not use any third party CSS frameworks.
+We prefer if you use redux for state managment
 
 We also prefer the use of minimal dependencies.
 
